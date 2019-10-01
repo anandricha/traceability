@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block main %}
+<body>
+
+    <h4>{{the_title}}</h4>
+
+        <div class="container" >
+            <div class="row">
+                {% for row_title in the_row_titles %}
+                    <div class="col  table-bordered bg-light text-dark">{{row_title}}</div>
+                {% endfor %}
+            </div>
+            {% for data in db_data %}
+                <div class="row">
+                        {% for row_data in data %}
+                             <div class="col  table-bordered" ><a href="{{ url_for('sprint_wise_details',sprint=data[0])}}">{{row_data}}</a></div>
+                        {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+
+
+         <table>
+             <td>
+                <tr>This is another container</tr>
+                    <table>
+                    <tr>{{group_data_sprint}}</tr
+                    </table>
+
+
+         </table>
+
+
+</body>
+{%endblock%}

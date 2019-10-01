@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Traceability-SprintData-{{the_title}}{% endblock %}
+{% block main %}
+<body>
+        <div class="container text-center" data-stellar-background-ratio=".5"">
+            <table class="table-striped table-bordered table-hover">
+                <tr >
+                    {% for row_title in the_row_titles %}
+                        <th class="bg-secondary">{{row_title}}</th>
+                    {% endfor %}
+                </tr>
+                {% for data in db_data %}
+                    <tr>
+                            {% for row_data in data %}
+                                 <th>{{row_data}}</th>
+                            {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+</body>
+{% endblock %}

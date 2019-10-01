@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Bulk-Upload{% endblock %}
+{% block main %}
+<body style="background-color : Bisque ">
+<h2 style="color: Gray">File Uploader</h2>
+<div>
+    <form id = "upload form " action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+        <B>Select File :</B> &nbsp; <input type="file" name="file" accept="application/vnd.ms-excel*" multiple> &nbsp;&nbsp;
+        <input type="submit", value= "Upload">
+</form>
+</div>
+</body>
+{% endblock %}
